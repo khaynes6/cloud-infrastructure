@@ -1,5 +1,3 @@
-# Azure Storage Configuration
-
 resource "azurerm_storage_account" "main" {
   name                     = "cloudinfrastorage"
   resource_group_name      = "cloud-infrastructure-rg"
@@ -9,7 +7,7 @@ resource "azurerm_storage_account" "main" {
 }
 
 resource "azurerm_storage_container" "data" {
-    name                  = "data"
-    storage_account_id  = azurerm_storage_account.main.name
-    container_access_type = "private" 
+  name                  = "data"
+  storage_account_id    = azurerm_storage_account.main.id
+  container_access_type = "private"
 }
